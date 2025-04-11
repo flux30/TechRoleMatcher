@@ -112,14 +112,14 @@ export default function SkillSelector({
                 filteredSkills.map((skill) => (
                   <div
                     key={skill.id}
-                    className="p-2 rounded-md hover:bg-accent-foreground cursor-pointer transition-colors flex items-center justify-between"
+                    className="p-2 rounded-md bg-accent-foreground/20 hover:bg-accent-foreground cursor-pointer transition-colors flex items-center justify-between hover:text-white my-1"
                     onClick={() => {
                       onAddSkill(skill);
                       setSearchTerm('');
                     }}
                   >
-                    <span className="font-medium">{skill.name}</span>
-                    <div className="text-xs bg-primary/20 text-primary px-2 py-0.5 rounded-full">Click to add</div>
+                    <span className="font-medium text-white">{skill.name}</span>
+                    <div className="text-xs bg-primary/40 text-white px-2 py-0.5 rounded-full hover:bg-primary">Click to add</div>
                   </div>
                 ))
               )}
@@ -146,12 +146,27 @@ export default function SkillSelector({
 
         <div 
           className={cn(
-            "mt-3 text-sm",
+            "mt-3 text-sm font-medium flex items-center",
             validation.type === "success" && "text-green-500",
-            validation.type === "warning" && "text-yellow-500",
-            validation.type === "error" && "text-red-500"
+            validation.type === "warning" && "text-amber-500",
+            validation.type === "error" && "text-rose-500"
           )}
         >
+          {validation.type === "error" && (
+            <div className="bg-rose-500/10 p-1 rounded-full mr-2">
+              <span className="text-rose-500 text-xs">!</span>
+            </div>
+          )}
+          {validation.type === "warning" && (
+            <div className="bg-amber-500/10 p-1 rounded-full mr-2">
+              <span className="text-amber-500 text-xs">!</span>
+            </div>
+          )}
+          {validation.type === "success" && (
+            <div className="bg-green-500/10 p-1 rounded-full mr-2">
+              <span className="text-green-500 text-xs">✓</span>
+            </div>
+          )}
           {validation.message}
         </div>
       </div>
