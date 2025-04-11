@@ -88,13 +88,13 @@ export default function SkillSelector({
           <div className="absolute z-10 mt-2 w-full bg-accent rounded-lg shadow-lg border border-border animate-fade-in">
             <div className="p-3 border-b border-border">
               <div className="relative">
-                <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                <Search className="absolute left-3 top-3 h-4 w-4 text-gray-500" />
                 <Input
                   type="text"
                   placeholder="Type to search..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full bg-accent-foreground text-white rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="w-full bg-white text-black rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
             </div>
