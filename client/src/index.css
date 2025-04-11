@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 224 36% 11%;
+    --foreground: 210 40% 98%;
+    
+    --card: 221 39% 17%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 221 39% 17%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 263 84% 63%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 240 95% 63%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 217 19% 47%;
+    --muted-foreground: 210 40% 96%;
+    
+    --accent: 221 39% 25%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 217 19% 35%;
+    --input: 217 19% 35%;
+    --ring: 263 84% 63%;
+    
+    --radius: 0.5rem;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-lexend antialiased;
+  }
+}
+
+/* Import Lexend font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap');
+
+@layer utilities {
+  .skill-chip {
+    @apply transition-all duration-200;
+  }
+  
+  .skill-chip:hover {
+    @apply -translate-y-0.5;
+  }
+  
+  .result-card {
+    @apply transition-all duration-300;
+  }
+  
+  .result-card:hover {
+    @apply -translate-y-1 shadow-lg;
+  }
+  
+  .progress-bar {
+    @apply transition-all duration-1000 ease-out;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+}
