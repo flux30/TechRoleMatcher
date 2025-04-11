@@ -112,14 +112,14 @@ export default function SkillSelector({
                 filteredSkills.map((skill) => (
                   <div
                     key={skill.id}
-                    className="p-2 rounded-md bg-accent-foreground/20 hover:bg-accent-foreground cursor-pointer transition-colors flex items-center justify-between hover:text-white my-1"
+                    className="p-2 rounded-md bg-accent-foreground/20 hover:bg-accent-foreground cursor-pointer transition-colors flex items-center justify-between my-1 group"
                     onClick={() => {
                       onAddSkill(skill);
                       setSearchTerm('');
                     }}
                   >
-                    <span className="font-medium text-white">{skill.name}</span>
-                    <div className="text-xs bg-primary/40 text-white px-2 py-0.5 rounded-full hover:bg-primary">Click to add</div>
+                    <span className="font-medium text-gray-300 group-hover:text-white">{skill.name}</span>
+                    <div className="text-xs bg-primary/40 text-white px-2 py-0.5 rounded-full group-hover:bg-primary transition-colors">Click to add</div>
                   </div>
                 ))
               )}
