@@ -112,7 +112,7 @@ export default function SkillSelector({
                 filteredSkills.map((skill) => (
                   <div
                     key={skill.id}
-                    className="p-2 rounded-md hover:bg-accent-foreground cursor-pointer transition-colors flex items-center justify-between"
+                    className="p-2 rounded-md hover:bg-white hover:text-black cursor-pointer transition-colors flex items-center justify-between"
                     onClick={() => {
                       onAddSkill(skill);
                       setSearchTerm('');

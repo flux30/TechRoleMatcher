@@ -77,14 +77,25 @@ export default function Home() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-2xl">
-      {/* Header */}
-      <header className="mb-8 text-center">
-        <h1 className="text-2xl md:text-3xl font-semibold text-white mb-2">
-          IT Job Role Recommender
-        </h1>
+    <div className="container mx-auto px-4 py-8 max-w-3xl">
+      {/* Header with Visual Enhancement */}
+      <header className="mb-12 text-center">
+        <div className="bg-gradient-to-r from-primary/20 to-secondary/20 p-6 rounded-2xl shadow-lg mb-6">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
+            IT Job Role Recommender
+          </h1>
+          <div className="h-1 w-24 bg-primary mx-auto mb-4 rounded-full"></div>
+          <p className="text-muted-foreground text-base md:text-lg max-w-xl mx-auto">
+            Discover the perfect IT career path that matches your technical expertise
+          </p>
+        </div>
+        <div className="flex flex-wrap justify-center gap-2 mb-4">
+          <span className="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Data-Driven</span>
+          <span className="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Skill-Based Matching</span>
+          <span className="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full">Career Guidance</span>
+        </div>
         <p className="text-muted-foreground text-sm md:text-base">
-          Select 2-5 technical skills to get personalized job role recommendations
+          Select 2-5 technical skills below to get personalized job role recommendations
         </p>
       </header>
 
