@@ -80,7 +80,7 @@ export default function SkillSelector({
           className="flex items-center justify-between bg-accent text-white rounded-lg px-4 py-3 cursor-pointer border border-border hover:border-primary transition-colors"
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         >
-          <span>Search and select skills...</span>
+          <span>{selectedSkills.length > 0 ? `${selectedSkills.length} skill${selectedSkills.length !== 1 ? 's' : ''} selected` : 'Search and select skills...'}</span>
           <ChevronDown className="h-4 w-4 text-muted-foreground" />
         </div>
 
@@ -112,13 +112,14 @@ export default function SkillSelector({
                 filteredSkills.map((skill) => (
                   <div
                     key={skill.id}
-                    className="p-2 rounded-md hover:bg-accent-foreground cursor-pointer transition-colors"
+                    className="p-2 rounded-md hover:bg-accent-foreground cursor-pointer transition-colors flex items-center justify-between"
                     onClick={() => {
                       onAddSkill(skill);
-                      setIsDropdownOpen(false);
+                      setSearchTerm('');
                     }}
                   >
-                    <span>{skill.name}</span>
+                    <span className="font-medium">{skill.name}</span>
+                    <div className="text-xs bg-primary/20 text-primary px-2 py-0.5 rounded-full">Click to add</div>
                   </div>
                 ))
               )}
