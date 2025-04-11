@@ -85,7 +85,7 @@ export default function SkillSelector({
         </div>
 
         {isDropdownOpen && (
-          <div className="absolute z-10 mt-2 w-full bg-accent rounded-lg shadow-lg border border-border animate-fade-in">
+          <div className="absolute z-10 mt-2 w-full bg-white rounded-lg shadow-lg border border-border animate-fade-in">
             <div className="p-3 border-b border-border">
               <div className="relative">
                 <Search className="absolute left-3 top-3 h-4 w-4 text-gray-500" />
@@ -112,13 +112,13 @@ export default function SkillSelector({
                 filteredSkills.map((skill) => (
                   <div
                     key={skill.id}
-                    className="p-2 rounded-md bg-accent-foreground/20 hover:bg-accent-foreground cursor-pointer transition-colors flex items-center justify-between my-1 group"
+                    className="p-2 rounded-md bg-gray-100 hover:bg-accent-foreground cursor-pointer transition-colors flex items-center justify-between my-1 group"
                     onClick={() => {
                       onAddSkill(skill);
                       setSearchTerm('');
                     }}
                   >
-                    <span className="font-medium text-gray-300 group-hover:text-white">{skill.name}</span>
+                    <span className="font-medium text-black group-hover:text-white">{skill.name}</span>
                     <div className="text-xs bg-primary/40 text-white px-2 py-0.5 rounded-full group-hover:bg-primary transition-colors">Click to add</div>
                   </div>
                 ))
